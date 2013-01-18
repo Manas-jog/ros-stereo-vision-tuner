@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageDepth</class>
+ <widget class="QMainWindow" name="ImageDepth">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>702</width>
+    <height>452</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>702</width>
+    <height>452</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>702</width>
+    <height>452</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ImageDepth</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>661</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="algorithmLabel">
+       <property name="text">
+        <string>Algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="algorithmComboBox">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Block Matching Algorithm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Semi-global block matching algorithm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Variational matching algorithm</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>661</width>
+      <height>370</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>BM</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>21</x>
+        <y>20</y>
+        <width>632</width>
+        <height>284</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_6">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="BMPreFilterCapLabel">
+         <property name="text">
+          <string>PreFilterCap</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="MyQSlider" name="BMPreFilterCapSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>420</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="BMSADWindowSizeLabel">
+         <property name="text">
+          <string>SADWindowSize</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="MyQSlider" name="BMSADWindowSizeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="BMMinimumDisparityLabel">
+         <property name="text">
+          <string>Minimum Disparity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="MyQSlider" name="BMMinimumDisparitySlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="BMNumberOfDisparitiesLabel">
+         <property name="text">
+          <string>Number of Disparities</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="MyQSlider" name="BMNumberOfDisparitiesSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="BMTextureThresholdLabel">
+         <property name="text">
+          <string>Texture Threshold</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="MyQSlider" name="BMTextureThresholdSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="BMUniquenessRatioLabel">
+         <property name="text">
+          <string>Uniqueness Ratio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="MyQSlider" name="BMUniquenessRatioSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="BMSpeckleWindowSizeLabel">
+         <property name="text">
+          <string>Speckle Window Size</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="MyQSlider" name="BMSpeckleWindowSizeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="BMSpeckleRangeLabel">
+         <property name="text">
+          <string>Speckle Range</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="MyQSlider" name="BMSpeckleRangeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="BMMaximumDisparityDifferenceLabel">
+         <property name="text">
+          <string>Maximum Disparity Difference</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="MyQSlider" name="BMMaximumDisparityDifferenceSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>SGBM</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>632</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_7">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="SGBMPreFilterCapLabel">
+         <property name="text">
+          <string>PreFilterCap</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="MyQSlider" name="SGBMPreFilterCapSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>420</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="SGBMSADWindowSizeLabel">
+         <property name="text">
+          <string>SADWindowSize</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="MyQSlider" name="SGBMSADWindowSizeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="SGBMMinimumDisparityLabel">
+         <property name="text">
+          <string>Minimum Disparity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="MyQSlider" name="SGBMMinimumDisparitySlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="SGBMNumberOfDisparitiesLabel">
+         <property name="text">
+          <string>Number of Disparities</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="MyQSlider" name="SGBMNumberOfDisparitiesSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="SGBMUniquenessRatioLabel">
+         <property name="text">
+          <string>Uniqueness Ratio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="MyQSlider" name="SGBMUniquenessRatioSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="SGBMSpeckleWindowSizeLabel">
+         <property name="text">
+          <string>Speckle Window Size</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="MyQSlider" name="SGBMSpeckleWindowSizeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="SGBMSpeckleRangeLabel">
+         <property name="text">
+          <string>Speckle Range</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="MyQSlider" name="SGBMSpeckleRangeSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="SGBMMaximumDisparityDifferenceLabel">
+         <property name="text">
+          <string>Maximum Disparity Difference</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="MyQSlider" name="SGBMMaximumDisparityDifferenceSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="SGBMFullScale2xPassLabel">
+         <property name="text">
+          <string>Full Scale 2x Pass</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="SGBMFullScale2xPassComboBox">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>True</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>False</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Var</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>630</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="VarIterationsLabel">
+         <property name="text">
+          <string>Iterations</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="MyQSlider" name="VarIterationsSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>420</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="VarMinimumDisparityLabel">
+         <property name="text">
+          <string>Minimum Disparity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="MyQSlider" name="VarMinimumDisparitySlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="VarMaximumDisparityLabel">
+         <property name="text">
+          <string>Maximum Disparity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="MyQSlider" name="VarMaximumDisparitySlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="VarOrderOfPolynomialLabel">
+         <property name="text">
+          <string>Order of Polynomial                    </string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="MyQSlider" name="VarOrderOfPolynomialSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="VarStandardDeviationLabel">
+         <property name="text">
+          <string>Standard Deviation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="MyQSlider" name="VarStandardDeviationSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="VarSmoothnessLabel">
+         <property name="text">
+          <string>Smoothness</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="MyQSlider" name="VarSmoothnessSlider" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="VarThresholdLabel">
+         <property name="text">
+          <string>Threshold</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="VarThresholdLineEdit">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>0.03</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyQSlider</class>
+   <extends>QWidget</extends>
+   <header>myqslider.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
